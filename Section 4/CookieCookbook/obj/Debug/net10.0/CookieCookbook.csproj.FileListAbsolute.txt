@@ -1,0 +1,15 @@
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/bin/Debug/net10.0/CookieCookbook
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/bin/Debug/net10.0/CookieCookbook.deps.json
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/bin/Debug/net10.0/CookieCookbook.runtimeconfig.json
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/bin/Debug/net10.0/CookieCookbook.dll
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/bin/Debug/net10.0/CookieCookbook.pdb
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/obj/Debug/net10.0/CookieCookbook.GeneratedMSBuildEditorConfig.editorconfig
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/obj/Debug/net10.0/CookieCookbook.AssemblyInfoInputs.cache
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/obj/Debug/net10.0/CookieCookbook.AssemblyInfo.cs
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/obj/Debug/net10.0/CookieCookbook.csproj.CoreCompileInputs.cache
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/obj/Debug/net10.0/CookieCookbook.sourcelink.json
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/obj/Debug/net10.0/CookieCookbook.dll
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/obj/Debug/net10.0/refint/CookieCookbook.dll
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/obj/Debug/net10.0/CookieCookbook.pdb
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/obj/Debug/net10.0/CookieCookbook.genruntimeconfig.cache
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 4/CookieCookbook/obj/Debug/net10.0/ref/CookieCookbook.dll
