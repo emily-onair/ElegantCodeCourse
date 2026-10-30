@@ -2,15 +2,18 @@ using System;
 
 namespace Coding.Exercise
 {
-    public static class StringsTransformator
+    public static class ListExtensions
     {
-        public static string TransformSeparators(
-            string input,
-            string originalSeparator,
-            string targetSeparator)
-        {
-            var list = input.Split(originalSeparator);
-            return string.Join(targetSeparator, list);
+        public static List<int> TakeEverySecond(this List<int> input) {
+            List<int> newList = new List<int>();
+            int i = 0;
+            while (i < input.Count) {
+                if (i % 2 == 0) {
+                    newList.Add(input[i]);
+                }
+                i++;
+            }
+            return newList;
         }
     }
 }
