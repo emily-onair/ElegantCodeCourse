@@ -1,4 +1,4 @@
-namespace CookieCookbook.Models;
+namespace CookieCookbook.Models.Repositories;
 
 interface IRecipeStore
 {
