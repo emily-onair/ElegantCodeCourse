@@ -1,0 +1,15 @@
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/obj/Debug/net10.0/GameDataParser.GeneratedMSBuildEditorConfig.editorconfig
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/obj/Debug/net10.0/GameDataParser.AssemblyInfoInputs.cache
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/obj/Debug/net10.0/GameDataParser.AssemblyInfo.cs
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/obj/Debug/net10.0/GameDataParser.csproj.CoreCompileInputs.cache
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/obj/Debug/net10.0/GameDataParser.sourcelink.json
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/bin/Debug/net10.0/GameDataParser
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/bin/Debug/net10.0/GameDataParser.deps.json
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/bin/Debug/net10.0/GameDataParser.runtimeconfig.json
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/bin/Debug/net10.0/GameDataParser.dll
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/bin/Debug/net10.0/GameDataParser.pdb
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/obj/Debug/net10.0/GameDataParser.dll
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/obj/Debug/net10.0/refint/GameDataParser.dll
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/obj/Debug/net10.0/GameDataParser.pdb
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/obj/Debug/net10.0/GameDataParser.genruntimeconfig.cache
+/Users/emilystickler/vertex-learning/ElegantCodeCourse/Section 5/GameDataParser/obj/Debug/net10.0/ref/GameDataParser.dll

@@ -7,11 +7,9 @@ const FileType fileType = FileType.Json;
 
 var ingredientsStore = new IngredientsStore();
 
-IRecipeStore recipeStore;
-if (fileType == FileType.Json)
-    recipeStore = new RecipeStoreJson(ingredientsStore);
-else
-    recipeStore = new RecipeStoreTxt(ingredientsStore);
+IRecipeStore recipeStore = fileType == FileType.Json 
+    ? new RecipeStoreJson(ingredientsStore) 
+    : new RecipeStoreTxt(ingredientsStore);
 
 recipeStore.PrintExistingRecipes();
 
