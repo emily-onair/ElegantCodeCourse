@@ -1,14 +1,16 @@
-using System.Text.Json;
+using CookieCookbook.Models.Repositories.Ingredients;
+using CookieCookbook.Models.UserInteraction;
 
-namespace CookieCookbook.Models.Repositories;
+namespace CookieCookbook.Models.Repositories.Recipes;
 
 public abstract class RecipeStore : IRecipeStore
 {
     protected virtual string FilePath { get; set; } = "";
-    public RecipeStore(IngredientsStore ingredientStore): this(ingredientStore, null) {}
-    public RecipeStore(IngredientsStore ingredientStore, string? str)
+    protected IUserInteraction _userInteraction;
+    public RecipeStore(IngredientStore ingredientStore, IUserInteraction userInteraction, string? filePath = null)
     {
-        if (str is not null) FilePath = str;
+        if (filePath is not null) FilePath = filePath;
+        _userInteraction = userInteraction;
         GetExistingRecipes(ingredientStore);
     }
     public List<Recipe> ExistingRecipes = [];
@@ -17,7 +19,7 @@ public abstract class RecipeStore : IRecipeStore
 
     protected abstract void SaveContent(List<string> current);
 
-    public void GetExistingRecipes(IngredientsStore ingredientStore)
+    public void GetExistingRecipes(IngredientStore ingredientStore)
     {
         if (File.Exists(FilePath) is false) return;
         var content = GetContent();
@@ -43,7 +45,8 @@ public abstract class RecipeStore : IRecipeStore
     {
         for (int i = 0; i < ExistingRecipes.Count; i++)
         {
-            ExistingRecipes[i].PrintRecipe(i + 1);
+            _userInteraction.PrintForUser($"*****{i + 1}*****");
+            _userInteraction.PrintForUser(ExistingRecipes[i].ToString());
         }
     }
     

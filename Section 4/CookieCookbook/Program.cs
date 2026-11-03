@@ -1,21 +1,30 @@
 ﻿using CookieCookbook.Models;
-using CookieCookbook.Models.Repositories;
+using CookieCookbook.Models.Repositories.Ingredients;
+using CookieCookbook.Models.Repositories.Recipes;
+using CookieCookbook.Models.UserInteraction;
 
 
 
-const FileType fileType = FileType.Json;
+const FileType fileType = FileType.Text;
+const string ingredientsFilePath = fileType == FileType.Json 
+    ? "./Data/AvailableIngredients.json" 
+    : "./Data/AvailableIngredients.txt";
 
-var ingredientsStore = new IngredientsStore();
+var userInteraction = new UserInteractionConsole();
+
+IngredientStore ingredientStore = fileType == FileType.Json 
+    ? new IngredientStoreJson(userInteraction, ingredientsFilePath)
+    : new IngredientStoreTxt(userInteraction, ingredientsFilePath);
 
 IRecipeStore recipeStore = fileType == FileType.Json 
-    ? new RecipeStoreJson(ingredientsStore) 
-    : new RecipeStoreTxt(ingredientsStore);
+    ? new RecipeStoreJson(ingredientStore, userInteraction) 
+    : new RecipeStoreTxt(ingredientStore, userInteraction);
 
 recipeStore.PrintExistingRecipes();
 
-Console.WriteLine("Create a new recipe! Available ingredients are: ");
-Console.WriteLine();
-ingredientsStore.PrintAvailableIngredients();
+userInteraction.PrintForUser("Create a new recipe! Available ingredients are: ");
+ingredientStore.PrintAvailableIngredients();
 
-string recipeToAdd = CollectUserInput.CollectIngredients(ingredientsStore);
+
+string recipeToAdd = userInteraction.CollectIngredients(ingredientStore);
 recipeStore.AddNewRecipe(recipeToAdd);

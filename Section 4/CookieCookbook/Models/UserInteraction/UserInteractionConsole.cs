@@ -1,13 +1,19 @@
-namespace CookieCookbook.Models;
+using CookieCookbook.Models.Repositories.Ingredients;
+namespace CookieCookbook.Models.UserInteraction;
 
-public class CollectUserInput
+public class UserInteractionConsole : IUserInteraction
 {
-    public static string CollectIngredients(IngredientsStore ingredientsStore)
+    public void PrintForUser(string message)
+    {
+        Console.WriteLine(message);
+    }
+
+    public string CollectIngredients(IngredientStore ingredientsStore)
     {
         List<string> ids = [];
         do
         {
-            Console.WriteLine("Add an ingredient by its ID. Type anything else to finish.");
+            PrintForUser("Add an ingredient by its ID. Type anything else to finish.");
             var userInput = Console.ReadLine();
             // check if valid int
             if (int.TryParse(userInput, out int res))
