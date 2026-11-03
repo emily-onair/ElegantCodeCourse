@@ -17,8 +17,6 @@ public abstract class IngredientStore : IIngredientStore
         get => [.. AvailableIngredients.Select(i => i.Id.ToString())];
     }
 
-    public abstract void PopulateAvailableIngredients(string filePath);
-
     public void PrintAvailableIngredients()
     {
         foreach (var ingredient in AvailableIngredients)
@@ -33,4 +31,6 @@ public abstract class IngredientStore : IIngredientStore
         }
         return null;
     }
+
+    public abstract void PopulateAvailableIngredients(string filePath);
 }
