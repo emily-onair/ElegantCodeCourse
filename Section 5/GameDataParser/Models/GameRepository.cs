@@ -1,26 +1,29 @@
 using System.Text.Json;
+using GameDataParser.Models.UserInteraction;
 
 namespace GameDataParser.Models;
 
-public class GameRepository
+public class GameRepository : IGameRepository
 {
     public List<Game> Games = [];
-    public GameRepository(string filename)
+    private readonly IUserInteraction _userInteraction;
+    public GameRepository(string filename, IUserInteraction userInteraction)
     {
         var fileContent = GetGamesFromJsonFile(filename);
         if (fileContent is not null) Games = fileContent;
+        _userInteraction = userInteraction;
     }
 
-    private static List<Game>? GetGamesFromJsonFile(string filename)
+    public List<Game>? GetGamesFromJsonFile(string filename)
     {
         string jsonString = File.ReadAllText(filename);
         try {
             var json = JsonSerializer.Deserialize<List<Game>>(jsonString);
             return json;
         } catch (JsonException) {
-            Console.WriteLine($"JSON in {filename} was not in a valid format. " +
+            _userInteraction.PrintForUser($"JSON in {filename} was not in a valid format. " +
             "JSON body: ");
-            Console.WriteLine(jsonString);
+            _userInteraction.PrintErrorForUser(jsonString);
             throw;
         }
     }
@@ -28,7 +31,7 @@ public class GameRepository
     {
         foreach (var game in Games)
         {
-            game.PrintGame();
+            _userInteraction.PrintForUser(game.ToString());
         }
     }
 }
