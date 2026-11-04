@@ -8,8 +8,8 @@ namespace Coding.Exercise
         public T Second { get; private set; }
         public Pair(T first, T second)
         {
-            this.First = first;
-            this.Second = second;
+            First = first;
+            Second = second;
         }
 
         public void ResetFirst()
