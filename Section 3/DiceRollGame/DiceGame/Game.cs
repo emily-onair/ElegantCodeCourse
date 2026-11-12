@@ -1,27 +1,26 @@
-using DiceRollGame.UserInput;
-
 namespace DiceRollGame.DiceGame;
-public class Game
+using DiceRollGame;
+public class Game(IDice dice, IUserCommunication userCommunication) : IGame
 {
-    private readonly Dice _dice;
+    private readonly IDice _dice = dice;
     private const int AllowedTries = 3;
-    public Game(Dice dice)
-    {
-        _dice = dice;
-    }
+    private IUserCommunication _userCommunication = userCommunication;
+
     public Results Play()
     {
         var numberToGuess = _dice.Roll();
-        Console.WriteLine($"Guess {numberToGuess}");
-        Console.WriteLine($"Dice rolled. Guess what number it shows in {AllowedTries} tries.");
+        _userCommunication.PrintMessage(string.Format(Resources.Greeting, AllowedTries));
         int i = 0;
         while (i < AllowedTries)
         {
-            var guess = ConsoleRead.ReadValidInt(_dice.Sides);
+            var guess = _userCommunication.CollectGuess("Enter a number: ");
+            if (guess < 1 || guess > _dice.Sides)
+                continue;
             if (guess == numberToGuess)
                 return Results.Win;
-            Console.WriteLine("Wrong number");
+            _userCommunication.PrintMessage("Wrong number");
             i++;
+
         }
         return Results.Lose;
     }

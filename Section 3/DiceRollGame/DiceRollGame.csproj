@@ -7,4 +7,30 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <!--
+    .resx files are already included as EmbeddedResource by the SDK, so use Update (not Include).
+    The StronglyTyped* metadata makes `dotnet build` generate the Resources class
+    (into obj/), so it works in VS Code without Visual Studio's ResXFileCodeGenerator.
+  -->
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Resources.resx">
+      <StronglyTypedLanguage>CSharp</StronglyTypedLanguage>
+      <StronglyTypedNamespace>DiceRollGame</StronglyTypedNamespace>
+      <StronglyTypedClassName>Resources</StronglyTypedClassName>
+      <!-- Generated next to the .resx (not in obj/) so VS Code's C# language server always sees it -->
+      <StronglyTypedFileName>Resources\Resources.Designer.cs</StronglyTypedFileName>
+      <PublicClass>true</PublicClass>
+      <!-- Must equal "<StronglyTypedNamespace>.<StronglyTypedClassName>.resources" so the generated class finds it at runtime -->
+      <LogicalName>DiceRollGame.Resources.resources</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <!-- Resource generation adds the Designer file to Compile a second time; keep a single copy (avoids warning CS2002) -->
+  <Target Name="DedupeResourcesDesigner" AfterTargets="CoreResGen">
+    <ItemGroup>
+      <Compile Remove="Resources\Resources.Designer.cs" />
+      <Compile Include="Resources\Resources.Designer.cs" />
+    </ItemGroup>
+  </Target>
+
 </Project>

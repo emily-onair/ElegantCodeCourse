@@ -1,14 +1,11 @@
 namespace DiceRollGame.DiceGame;
-public class Dice
+public class Dice(Random random, int sides = 6) : IDice
 {
-    public int Sides { get; init; }
-    public Dice (int sides = 6)
-    {
-        Sides = sides;
-    }
+    public int Sides { get; init; } = sides;
+    private readonly Random _random = random;
 
     public int Roll()
     {
-        return new Random().Next(1, Sides + 1);
+        return _random.Next(1, Sides + 1);
     }
 }
